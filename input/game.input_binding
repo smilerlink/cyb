@@ -18,6 +18,26 @@ key_trigger {
   input: KEY_X
   action: "fire"
 }
+key_trigger {
+  input: KEY_W
+  action: "jump"
+}
+key_trigger {
+  input: KEY_A
+  action: "left"
+}
+key_trigger {
+  input: KEY_D
+  action: "right"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_LEFT
+  action: "fire"
+}
+mouse_trigger {
+  input: MOUSE_WHEEL_UP
+  action: ""
+}
 gamepad_trigger {
   input: GAMEPAD_LSTICK_LEFT
   action: "left"
