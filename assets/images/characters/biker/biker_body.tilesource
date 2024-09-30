@@ -52,3 +52,4 @@ animations {
   playback: PLAYBACK_LOOP_FORWARD
   fps: 10
 }
+extrude_borders: 2

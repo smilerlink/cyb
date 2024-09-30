@@ -10,8 +10,8 @@ local MAX_FALL_SPEED = 500
 -- gravity pulling the player down in pixel units
 local GRAVITY = -500
 -- take-off speed when jumping in pixel units
-local JUMP_TAKEOFF_SPEED = 240
-local DOUBLEJUMP_TAKEOFF_SPEED = 200
+local JUMP_TAKEOFF_SPEED = 400
+local DOUBLEJUMP_TAKEOFF_SPEED = 300
 -- push-back when shooting
 local RECOIL = 500
 
