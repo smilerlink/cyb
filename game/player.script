@@ -26,12 +26,14 @@ local RIGHT = hash("right")
 local JUMP = hash("jump")
 local FIRE = hash("fire")
 
-local ANIM_WALK = hash("walk")
-local ANIM_IDLE = hash("idle")
-local ANIM_JUMP = hash("jump")
-local ANIM_FALL = hash("fall")
+local ANIM_WALK = hash("gun_walk")
+local ANIM_IDLE = hash("gun_idle")
+local ANIM_JUMP = hash("gun_jump")
+local ANIM_FALL = hash("gun_fall")
 
-local SPRITE = "visuals#sprite"
+local SPRITE_BODY = "visuals#body"
+local SPRITE_ARMS = "visuals#arms"
+local SPRITE_GUN = "visuals#gun"
 
 
 function init(self)
@@ -64,7 +66,9 @@ local function play_animation(self, anim)
 	-- only play animations which are not already playing
 	if self.anim ~= anim then
 		-- tell the sprite to play the animation
-		sprite.play_flipbook(SPRITE, anim)
+		sprite.play_flipbook(SPRITE_BODY, anim)
+		sprite.play_flipbook(SPRITE_ARMS, anim)
+		sprite.play_flipbook(SPRITE_GUN, anim)
 		-- remember which animation is playing
 		self.anim = anim
 	end
@@ -77,7 +81,9 @@ end
 
 local function update_animations(self)
 	-- make sure the player character faces the right way
-	sprite.set_hflip(SPRITE, self.direction == -1)
+	sprite.set_hflip(SPRITE_BODY, self.direction == -1)
+	sprite.set_hflip(SPRITE_ARMS, self.direction == -1)
+	sprite.set_hflip(SPRITE_GUN, self.direction == -1)
 
 	-- make sure the right animation is playing
 	if self.ground_contact then
@@ -221,14 +227,14 @@ local function jump(self)
 		play_animation(self, ANIM_JUMP)
 		self.ground_contact = false
 		-- compress and stretch player for visual "juice"
-		squish()
+		--squish()
 	-- allow double jump if still moving up
 	elseif not self.double_jump then
 		self.velocity.y = DOUBLEJUMP_TAKEOFF_SPEED
 		self.double_jump = true
 	end
 	-- add some particles 
-	particlefx.play("#jump")
+	--particlefx.play("#jump")
 end
 
 local function abort_jump(self)
@@ -256,7 +262,8 @@ local function fire(self)
 	
 	local pos = go.get_position()
 	-- offset the bullet so that it is fired "outside" of the player sprite
-	pos.x = pos.x + 8 * self.direction
+	pos.x = pos.x + 12 * self.direction
+	pos.y = pos.y + 14
 	local id = factory.create("#bulletfactory", pos)
 
 	-- flip the bullet sprite

@@ -1,0 +1,16 @@
+image: "/assets/images/characters/guns.png"
+tile_width: 32
+tile_height: 32
+animations {
+  id: "ar_angle"
+  start_tile: 2
+  end_tile: 2
+  fps: 10
+}
+animations {
+  id: "ar_straight"
+  start_tile: 1
+  end_tile: 1
+  fps: 10
+}
+extrude_borders: 2

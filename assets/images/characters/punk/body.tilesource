@@ -1,0 +1,123 @@
+image: "/assets/images/characters/punk/body.png"
+tile_width: 48
+tile_height: 48
+animations {
+  id: "climb"
+  start_tile: 41
+  end_tile: 46
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "death"
+  start_tile: 57
+  end_tile: 62
+  fps: 10
+}
+animations {
+  id: "fall"
+  start_tile: 27
+  end_tile: 27
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "flip"
+  start_tile: 33
+  end_tile: 38
+  fps: 10
+}
+animations {
+  id: "gun_crouch"
+  start_tile: 161
+  end_tile: 163
+  fps: 10
+}
+animations {
+  id: "gun_fall"
+  start_tile: 155
+  end_tile: 155
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_idle"
+  start_tile: 129
+  end_tile: 132
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_jump"
+  start_tile: 153
+  end_tile: 154
+  fps: 10
+}
+animations {
+  id: "gun_land"
+  start_tile: 156
+  end_tile: 156
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_run"
+  start_tile: 145
+  end_tile: 150
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_stand"
+  start_tile: 164
+  end_tile: 164
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_walk"
+  start_tile: 137
+  end_tile: 142
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "hurt"
+  start_tile: 49
+  end_tile: 50
+  fps: 10
+}
+animations {
+  id: "idle"
+  start_tile: 1
+  end_tile: 4
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "jump"
+  start_tile: 25
+  end_tile: 26
+  fps: 10
+}
+animations {
+  id: "land"
+  start_tile: 28
+  end_tile: 28
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "punch"
+  start_tile: 17
+  end_tile: 22
+  fps: 10
+}
+animations {
+  id: "run"
+  start_tile: 9
+  end_tile: 14
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+extrude_borders: 2
