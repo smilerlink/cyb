@@ -3,48 +3,48 @@ instances {
   id: "bee2"
   prototype: "/game/bee.go"
   position {
-    x: 301.0
-    y: 174.0
+    x: 792.0
+    y: 612.0
   }
 }
 instances {
   id: "bee1"
   prototype: "/game/bee.go"
   position {
-    x: 542.0
-    y: 301.0
+    x: 571.0
+    y: 631.0
   }
 }
 instances {
   id: "slime"
   prototype: "/game/slime.go"
   position {
-    x: 812.0
-    y: 298.0
+    x: 1166.0
+    y: 461.0
   }
 }
 instances {
   id: "slime1"
   prototype: "/game/slime.go"
   position {
-    x: 33.0
-    y: 218.0
+    x: -12.0
+    y: 428.0
   }
 }
 instances {
   id: "slime3"
   prototype: "/game/slime.go"
   position {
-    x: 589.0
-    y: 234.0
+    x: 495.0
+    y: 333.0
   }
 }
 instances {
   id: "bluebee2"
   prototype: "/game/bluebee.go"
   position {
-    x: 329.0
-    y: 281.0
+    x: 1025.0
+    y: 578.0
   }
   component_properties {
     id: "bluebee"
@@ -59,8 +59,8 @@ instances {
   id: "bluebee1"
   prototype: "/game/bluebee.go"
   position {
-    x: 602.0
-    y: 328.0
+    x: 406.0
+    y: 451.0
   }
   component_properties {
     id: "bluebee"
@@ -75,8 +75,8 @@ instances {
   id: "bluebee3"
   prototype: "/game/bluebee.go"
   position {
-    x: 492.0
-    y: 269.0
+    x: 247.0
+    y: 563.0
   }
   component_properties {
     id: "bluebee"
@@ -91,8 +91,8 @@ collection_instances {
   id: "player"
   collection: "/game/player.collection"
   position {
-    x: 256.0
-    y: 165.0
+    x: 288.0
+    y: 434.0
     z: 1.0
   }
 }
@@ -132,7 +132,8 @@ embedded_instances {
   "  shapes {\\n"
   "    shape_type: TYPE_BOX\\n"
   "    position {\\n"
-  "      x: 547.0\\n"
+  "      x: 874.0\\n"
+  "      y: 63.0\\n"
   "    }\\n"
   "    rotation {\\n"
   "    }\\n"
@@ -148,30 +149,5 @@ embedded_instances {
   ""
   position {
     z: -1.0
-  }
-}
-embedded_instances {
-  id: "instructions"
-  data: "embedded_components {\n"
-  "  id: \"label\"\n"
-  "  type: \"label\"\n"
-  "  data: \"size {\\n"
-  "  x: 128.0\\n"
-  "  y: 32.0\\n"
-  "}\\n"
-  "pivot: PIVOT_NW\\n"
-  "text: \\\"ARROWS = MOVE\\\\n"
-  "\\\"\\n"
-  "  \\\"SPACE = JUMP + DOUBLE JUMP\\\\n"
-  "\\\"\\n"
-  "  \\\"X = SHOOT\\\"\\n"
-  "font: \\\"/assets/fonts/instructions.font\\\"\\n"
-  "material: \\\"/builtins/fonts/label.material\\\"\\n"
-  "\"\n"
-  "}\n"
-  ""
-  position {
-    x: 249.0
-    y: 148.0
   }
 }
