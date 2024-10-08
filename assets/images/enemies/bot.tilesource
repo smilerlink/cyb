@@ -1,0 +1,36 @@
+image: "/assets/images/enemies/bot.png"
+tile_width: 48
+tile_height: 48
+animations {
+  id: "attack"
+  start_tile: 1
+  end_tile: 4
+  fps: 10
+}
+animations {
+  id: "death"
+  start_tile: 5
+  end_tile: 8
+  fps: 10
+}
+animations {
+  id: "hurt"
+  start_tile: 9
+  end_tile: 10
+  fps: 10
+}
+animations {
+  id: "idle"
+  start_tile: 13
+  end_tile: 16
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "walk"
+  start_tile: 17
+  end_tile: 20
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+extrude_borders: 2
