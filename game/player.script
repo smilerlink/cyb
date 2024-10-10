@@ -13,7 +13,7 @@ local GRAVITY = -500
 local JUMP_TAKEOFF_SPEED = 260
 local DOUBLEJUMP_TAKEOFF_SPEED = 220
 -- push-back when shooting
-local RECOIL = 500
+local RECOIL = 0
 
 -- pre-hashing ids improves performance
 local CONTACT_POINT_RESPONSE = hash("contact_point_response")
@@ -72,11 +72,6 @@ local function play_animation(self, anim)
 		-- remember which animation is playing
 		self.anim = anim
 	end
-end
-
-local function squish()
-	go.animate("visuals", "scale.x", go.PLAYBACK_ONCE_PINGPONG, 0.8, go.EASING_INOUTQUAD, 0.6)
-	go.animate("visuals", "scale.y", go.PLAYBACK_ONCE_PINGPONG, 1.2, go.EASING_INOUTQUAD, 0.6)
 end
 
 local function update_animations(self)
@@ -227,14 +222,11 @@ local function jump(self)
 		play_animation(self, ANIM_JUMP)
 		self.ground_contact = false
 		-- compress and stretch player for visual "juice"
-		--squish()
 	-- allow double jump if still moving up
 	elseif not self.double_jump then
 		self.velocity.y = DOUBLEJUMP_TAKEOFF_SPEED
 		self.double_jump = true
 	end
-	-- add some particles 
-	--particlefx.play("#jump")
 end
 
 local function abort_jump(self)

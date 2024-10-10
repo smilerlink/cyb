@@ -3,8 +3,8 @@ instances {
   id: "bee2"
   prototype: "/game/bee.go"
   position {
-    x: 792.0
-    y: 612.0
+    x: 355.0
+    y: 620.0
   }
 }
 instances {
@@ -19,32 +19,32 @@ instances {
   id: "slime"
   prototype: "/game/slime.go"
   position {
-    x: 1166.0
-    y: 461.0
+    x: 433.0
+    y: 494.0
   }
 }
 instances {
   id: "slime1"
   prototype: "/game/slime.go"
   position {
-    x: -12.0
-    y: 428.0
+    x: 14.0
+    y: 429.0
   }
 }
 instances {
   id: "slime3"
   prototype: "/game/slime.go"
   position {
-    x: 495.0
-    y: 333.0
+    x: 557.0
+    y: 525.0
   }
 }
 instances {
   id: "bluebee2"
   prototype: "/game/bluebee.go"
   position {
-    x: 1025.0
-    y: 578.0
+    x: 67.0
+    y: 505.0
   }
   component_properties {
     id: "bluebee"
@@ -59,8 +59,8 @@ instances {
   id: "bluebee1"
   prototype: "/game/bluebee.go"
   position {
-    x: 406.0
-    y: 451.0
+    x: 390.0
+    y: 452.0
   }
   component_properties {
     id: "bluebee"
