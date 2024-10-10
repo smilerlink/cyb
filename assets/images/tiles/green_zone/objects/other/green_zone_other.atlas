@@ -1,0 +1,49 @@
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Box.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Garbage_Can1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Garbage_Can2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Ladder1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Ladder2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Ramp1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Ramp2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Rapm3.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Skateboard1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Skateboard2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Skateboard3.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Skateboard4.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Tree1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Tree2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Tree3.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/other/Tree4.png"
+}
+extrude_borders: 2

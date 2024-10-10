@@ -1,0 +1,46 @@
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/3.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/4.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/5.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/6.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/7.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/8.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/9.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/10.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/11.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/12.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/13.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/14.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/grass/15.png"
+}
+extrude_borders: 2

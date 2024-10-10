@@ -1,0 +1,13 @@
+images {
+  image: "/assets/images/tiles/green_zone/objects/benches/1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/benches/2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/benches/3.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/benches/4.png"
+}
+extrude_borders: 2

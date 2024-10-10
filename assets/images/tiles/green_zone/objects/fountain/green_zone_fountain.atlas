@@ -1,0 +1,7 @@
+images {
+  image: "/assets/images/tiles/green_zone/objects/fountain/1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/fountain/2.png"
+}
+extrude_borders: 2

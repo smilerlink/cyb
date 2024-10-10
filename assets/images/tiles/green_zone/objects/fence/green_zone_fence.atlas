@@ -1,0 +1,28 @@
+images {
+  image: "/assets/images/tiles/green_zone/objects/fence/1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/fence/2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/fence/2_1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/fence/3.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/fence/4.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/fence/4_1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/fence/5.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/fence/6.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/fence/7.png"
+}
+extrude_borders: 2

@@ -1,0 +1,19 @@
+images {
+  image: "/assets/images/tiles/green_zone/objects/leaf/1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/leaf/2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/leaf/3.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/leaf/4.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/leaf/5.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/leaf/6.png"
+}
+extrude_borders: 2

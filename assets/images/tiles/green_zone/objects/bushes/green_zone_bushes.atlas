@@ -1,0 +1,61 @@
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/1.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/2.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/3.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/4.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/5.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/6.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/7.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/8.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/9.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/10.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/11.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/12.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/13.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/14.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/15.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/16.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/17.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/18.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/19.png"
+}
+images {
+  image: "/assets/images/tiles/green_zone/objects/bushes/20.png"
+}
+extrude_borders: 2
