@@ -20,7 +20,7 @@ instances {
   prototype: "/game/slime.go"
   position {
     x: 433.0
-    y: 494.0
+    y: 493.0
   }
 }
 instances {
