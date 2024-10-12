@@ -1,0 +1,274 @@
+image: "/assets/images/characters/punk/gun_2.png"
+tile_width: 48
+tile_height: 48
+animations {
+  id: "gun_crouch_0"
+  start_tile: 25
+  end_tile: 27
+  fps: 10
+}
+animations {
+  id: "gun_crouch_135"
+  start_tile: 115
+  end_tile: 117
+  fps: 10
+}
+animations {
+  id: "gun_crouch_180"
+  start_tile: 145
+  end_tile: 147
+  fps: 10
+}
+animations {
+  id: "gun_crouch_45"
+  start_tile: 55
+  end_tile: 57
+  fps: 10
+}
+animations {
+  id: "gun_crouch_90"
+  start_tile: 85
+  end_tile: 87
+  fps: 10
+}
+animations {
+  id: "gun_fall_0"
+  start_tile: 21
+  end_tile: 21
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_fall_135"
+  start_tile: 111
+  end_tile: 111
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_fall_180"
+  start_tile: 141
+  end_tile: 141
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_fall_45"
+  start_tile: 51
+  end_tile: 51
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_fall_90"
+  start_tile: 81
+  end_tile: 81
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_idle_0"
+  start_tile: 1
+  end_tile: 4
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_idle_135"
+  start_tile: 91
+  end_tile: 94
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_idle_180"
+  start_tile: 121
+  end_tile: 124
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_idle_45"
+  start_tile: 31
+  end_tile: 34
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_idle_90"
+  start_tile: 61
+  end_tile: 64
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_jump_0"
+  start_tile: 19
+  end_tile: 20
+  fps: 10
+}
+animations {
+  id: "gun_jump_135"
+  start_tile: 109
+  end_tile: 110
+  fps: 10
+}
+animations {
+  id: "gun_jump_180"
+  start_tile: 139
+  end_tile: 140
+  fps: 10
+}
+animations {
+  id: "gun_jump_45"
+  start_tile: 49
+  end_tile: 50
+  fps: 10
+}
+animations {
+  id: "gun_jump_90"
+  start_tile: 79
+  end_tile: 80
+  fps: 10
+}
+animations {
+  id: "gun_land_0"
+  start_tile: 22
+  end_tile: 22
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_land_135"
+  start_tile: 112
+  end_tile: 112
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_land_180"
+  start_tile: 142
+  end_tile: 142
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_land_45"
+  start_tile: 52
+  end_tile: 52
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_land_90"
+  start_tile: 82
+  end_tile: 82
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_run_0"
+  start_tile: 13
+  end_tile: 18
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_run_135"
+  start_tile: 103
+  end_tile: 108
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_run_180"
+  start_tile: 133
+  end_tile: 138
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_run_45"
+  start_tile: 43
+  end_tile: 48
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_run_90"
+  start_tile: 73
+  end_tile: 78
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_stand_0"
+  start_tile: 28
+  end_tile: 28
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_stand_135"
+  start_tile: 118
+  end_tile: 118
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_stand_180"
+  start_tile: 148
+  end_tile: 148
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_stand_45"
+  start_tile: 58
+  end_tile: 58
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_stand_90"
+  start_tile: 88
+  end_tile: 88
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_walk_0"
+  start_tile: 7
+  end_tile: 12
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_walk_135"
+  start_tile: 97
+  end_tile: 102
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_walk_180"
+  start_tile: 127
+  end_tile: 132
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_walk_45"
+  start_tile: 37
+  end_tile: 42
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+animations {
+  id: "gun_walk_90"
+  start_tile: 67
+  end_tile: 72
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 10
+}
+extrude_borders: 2

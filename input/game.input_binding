@@ -12,7 +12,7 @@ key_trigger {
 }
 key_trigger {
   input: KEY_UP
-  action: "jump"
+  action: "up"
 }
 key_trigger {
   input: KEY_X
@@ -20,7 +20,7 @@ key_trigger {
 }
 key_trigger {
   input: KEY_W
-  action: "jump"
+  action: "up"
 }
 key_trigger {
   input: KEY_A
@@ -30,13 +30,17 @@ key_trigger {
   input: KEY_D
   action: "right"
 }
+key_trigger {
+  input: KEY_DOWN
+  action: "down"
+}
+key_trigger {
+  input: KEY_S
+  action: "down"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "fire"
-}
-mouse_trigger {
-  input: MOUSE_WHEEL_UP
-  action: ""
 }
 gamepad_trigger {
   input: GAMEPAD_LSTICK_LEFT
