@@ -38,6 +38,10 @@ key_trigger {
   input: KEY_S
   action: "down"
 }
+key_trigger {
+  input: KEY_LSHIFT
+  action: "run"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "fire"
