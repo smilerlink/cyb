@@ -1,4 +1,5 @@
 -- Player logic
+local guns = require('data.guns')
 
 -- these are the tweaks for the mechanics, feel free to change them for a different feeling
 -- max speed right/left
@@ -289,9 +290,26 @@ local function fire(self)
     self.velocity.x = self.velocity.x + RECOIL * -self.direction
     
     local pos = go.get_position()
+    local x, y = self.direction
+
+    if self.aim == 0 then
+        y = 1
+        x = 0
+    elseif self.aim == 45 then
+        y = 1
+    elseif self.aim == 90 then
+        y = 0
+    elseif self.aim == 135 then
+        y = -1
+    else
+        y = -1
+        x = 0
+    end
+    
+    local dir = vmath.vector3(x, y, 0)
     -- offset the bullet so that it is fired 'outside' of the player sprite
-    pos.x = pos.x + 12 * self.direction
-    pos.y = pos.y + 14
+    pos.x = pos.x + guns[2].offset[self.aim][1] * self.direction
+    pos.y = pos.y + guns[2].offset[self.aim][2]
     local id = factory.create('#bulletfactory', pos)
 
     -- flip the bullet sprite
@@ -299,9 +317,9 @@ local function fire(self)
 
     -- move the bullet 300 pixels and then delete it
     local distance = 300
-    local to = pos.x + distance * self.direction
+    local to = vmath.vector3(pos.x + distance * x, pos.y + distance * y, 0)
     local duration = distance / 250
-    go.animate(id, 'position.x', go.PLAYBACK_ONCE_FORWARD, to, go.EASING_LINEAR, duration, 0, function()
+    go.animate(id, 'position', go.PLAYBACK_ONCE_FORWARD, to, go.EASING_LINEAR, duration, 0, function()
         go.delete(id)
     end)
 end
