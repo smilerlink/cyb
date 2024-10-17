@@ -1,0 +1,10 @@
+local nakama = require 'game.nakama'
+
+function init(self)
+	-- login and set up nakama
+	nakama.login(function(ok, err)
+		if ok then
+			print('logged in')
+		end
+	end)
+end

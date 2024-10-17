@@ -325,7 +325,6 @@ local function fire(self)
 end
 
 function on_input(self, action_id, action)
-    pprint(action)
     if action_id == LEFT then
         walk(self, -action.value)
         if action.pressed then
