@@ -2,9 +2,13 @@ local nakama = require 'game.nakama'
 
 function init(self)
 	-- login and set up nakama
-	nakama.login(function(ok, err)
-		if ok then
-			print('logged in')
+	local success, socket, msg = nakama.login(function(socket, err)
+		if err then
+			print(err)
+		else
+			nakama.find_opponent_and_join_match(socket, function(joined)
+				print(joined and 'Joined match' or 'Not joined match')
+			end)
 		end
 	end)
 end

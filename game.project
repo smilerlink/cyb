@@ -56,7 +56,7 @@ default_texture_mag_filter = nearest
 max_count = 500
 
 [nakama]
-host = 146.148.69.243
+host = 34.135.191.142
 port = 7350
 server_key = SQnaQKEQqo9icYug5Xda603zDDyudivf
 
