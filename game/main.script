@@ -1,14 +1,19 @@
-local nakama = require 'game.nakama'
+local game = require 'game.main'
+
+local function on_show_menu()
+
+end
+
+local function on_show_game()
+
+end
 
 function init(self)
-	-- login and set up nakama
-	local success, socket, msg = nakama.login(function(socket, err)
-		if err then
-			print(err)
-		else
-			nakama.find_opponent_and_join_match(socket, function(joined)
-				print(joined and 'Joined match' or 'Not joined match')
-			end)
-		end
-	end)
+	if game.is_connected() then
+		on_show_menu()
+	else
+		game.on_show_menu(on_show_menu)
+		game.on_show_game(on_show_game)
+		game.connect()
+	end
 end

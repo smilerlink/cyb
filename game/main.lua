@@ -14,9 +14,9 @@ local on_join_match_fn
 function M.on_join_match(fn)
 	on_join_match_fn = fn
 end
--- called by xoxo when player wants to join a match
+-- called by game when player wants to join a match
 function M.join_match(callback)
-	assert(on_join_match_fn, "You must call xoxo.on_join_match() from your backend proxy")
+	assert(on_join_match_fn, 'You must call game.on_join_match() from your backend proxy')
 	callback = wrap(callback)
 	on_join_match_fn(function(success, message)
 		assert(success ~= nil)
@@ -31,9 +31,9 @@ local on_leave_match_fn
 function M.on_leave_match(fn)
 	on_leave_match_fn = fn
 end
--- called by xoxo when player wants to leave a match
+-- called by game when player wants to leave a match
 function M.leave_match()
-	assert(on_leave_match_fn, "You must call xoxo.on_leave_match() from your backend proxy")
+	assert(on_leave_match_fn, 'You must call game.on_leave_match() from your backend proxy')
 	on_leave_match_fn()
 end
 
@@ -56,7 +56,7 @@ function M.match_update(state, active_player, other_player, your_turn)
 		on_match_update_fn(state, active_player, other_player, your_turn)
 	end
 end
--- called by xoxo to subscribe to match state changes
+-- called by game to subscribe to match state changes
 function M.on_match_update(callback)
 	if not callback then
 		on_match_update_fn = nil
@@ -79,7 +79,7 @@ function M.opponent_left()
 		on_opponent_left_fn()
 	end
 end
--- called by xoxo to subscribe to when the opponent leaves a match 
+-- called by game to subscribe to when the opponent leaves a match 
 function M.on_opponent_left(callback)
 	if not callback then
 		on_opponent_left_fn = nil
@@ -94,9 +94,9 @@ local on_send_player_move_fn = nil
 function M.on_send_player_move(fn)
 	on_send_player_move_fn = fn
 end
--- called by xoxo when the player wants to send a move
+-- called by game when the player wants to send a move
 function M.send_player_move(row, column)
-	assert(on_send_player_move_fn, "You must call xoxo.on_send_player_move() from your backend proxy")
+	assert(on_send_player_move_fn, 'You must call game.on_send_player_move() from your backend proxy')
 	on_send_player_move_fn(row, column)
 end
 
@@ -104,11 +104,11 @@ local connected = false
 local on_show_menu_fn = nil
 local on_show_game_fn = nil
 
--- called by xoxo to get notified that it should navigate to the menu
+-- called by game to get notified that it should navigate to the menu
 function M.on_show_menu(fn)
 	on_show_menu_fn = wrap(fn)
 end
--- called by xoxo to get notified that it should navigate to the game
+-- called by game to get notified that it should navigate to the game
 function M.on_show_game(fn)
 	on_show_game_fn = wrap(fn)
 end
@@ -134,14 +134,14 @@ function M.on_connect(fn)
 	on_connect_fn = wrap(fn)
 end
 
--- called by xoxo when requesting backend proxy to connect
+-- called by game when requesting backend proxy to connect
 function M.connect()
-	assert(on_connect_fn, "You must call xoxo.on_connect() from your backend proxy")
+	assert(on_connect_fn, 'You must call game.on_connect() from your backend proxy')
 	on_connect_fn()
 end
 
 local on_disconnected_fn = nil
--- called by xoxo to get notified when the connection has been disconnected
+-- called by game to get notified when the connection has been disconnected
 function M.on_disconnected(fn)
 	on_disconnected_fn = wrap(fn)
 end
