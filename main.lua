@@ -16,7 +16,7 @@ function M.on_join_match(fn)
 end
 -- called by game when player wants to join a match
 function M.join_match(callback)
-	assert(on_join_match_fn, 'You must call game.on_join_match() from your backend proxy')
+	assert(on_join_match_fn, 'You must call main.on_join_match() from your backend proxy')
 	callback = wrap(callback)
 	on_join_match_fn(function(success, message)
 		assert(success ~= nil)
@@ -33,7 +33,7 @@ function M.on_leave_match(fn)
 end
 -- called by game when player wants to leave a match
 function M.leave_match()
-	assert(on_leave_match_fn, 'You must call game.on_leave_match() from your backend proxy')
+	assert(on_leave_match_fn, 'You must call main.on_leave_match() from your backend proxy')
 	on_leave_match_fn()
 end
 
@@ -96,7 +96,7 @@ function M.on_send_player_move(fn)
 end
 -- called by game when the player wants to send a move
 function M.send_player_move(row, column)
-	assert(on_send_player_move_fn, 'You must call game.on_send_player_move() from your backend proxy')
+	assert(on_send_player_move_fn, 'You must call main.on_send_player_move() from your backend proxy')
 	on_send_player_move_fn(row, column)
 end
 
@@ -136,7 +136,7 @@ end
 
 -- called by game when requesting backend proxy to connect
 function M.connect()
-	assert(on_connect_fn, 'You must call game.on_connect() from your backend proxy')
+	assert(on_connect_fn, 'You must call main.on_connect() from your backend proxy')
 	on_connect_fn()
 end
 

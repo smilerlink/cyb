@@ -1,0 +1,31 @@
+local monarch = require 'monarch.monarch'
+local main = require 'main'
+local nakama = require 'nakama'
+
+function init(self)
+	main.on_connect(function()
+		-- login and set up nakama
+		nakama.login(function(ok, err)
+			if ok then
+				msg.post('.', 'acquire_input_focus')
+				-- let the game know that we are connected
+				main.show_menu()
+			end
+		end)
+	end)
+	
+	msg.post('@render:', 'clear_color', { color = vmath.vector4(0.1, 0.1, 0.1, 1.0) })
+	msg.post('#', 'ready')
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash('ready') then
+		main.on_show_menu(function()
+			monarch.show(hash('menu'))
+		end)
+		main.on_show_game(function()
+			monarch.show(hash('game'))
+		end)
+		main.connect()
+	end
+end

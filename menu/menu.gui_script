@@ -1,0 +1,65 @@
+local monarch = require 'monarch.monarch'
+local main = require 'main'
+local gooey = require 'gooey.gooey'
+
+local function disable(node_name)
+    gui.set_enabled(gui.get_node(node_name), false)
+end
+
+local function enable(node_name)
+    gui.set_enabled(gui.get_node(node_name), true)
+end
+
+local function on_ready_to_join(message)
+    msg.post('.', 'acquire_input_focus')
+    --fadein('join')
+    enable('join')
+    --show_message(message or '')
+end
+
+local function on_start_game()
+    monarch.show(hash('game'))
+end
+
+function init(self)
+    msg.post('.', 'acquire_input_focus')
+
+    if main.is_connected() then
+        on_ready_to_join()
+    else
+        main.on_show_menu(on_ready_to_join)
+        main.on_show_game(on_start_game)
+        main.connect()
+    end
+end
+
+function on_input(self, action_id, action)
+    gooey.button("join", action_id, action, function()
+        msg.post(".", "release_input_focus")
+        disable("join")
+
+        local count = 60
+        --show_message("Finding a match")
+        local timeout_handle = timer.delay(1, true, function(self, handle, time_elapsed)
+            count = count - 1
+            if count == 60 then
+                --show_message("Finding a match")
+            else
+                --show_message(string.rep(".", count))
+                print(count)
+            end
+        end)
+
+        main.join_match(function(success, message)
+            msg.post(".", "acquire_input_focus")
+            timer.cancel(timeout_handle)
+            if success then
+                --show_message("Found a match!")
+                on_start_game()
+            else
+                print(message)
+                on_ready_to_join(message)
+            end
+        end)
+    end)
+end

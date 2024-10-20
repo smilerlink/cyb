@@ -46,6 +46,14 @@ mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "fire"
 }
+mouse_trigger {
+  input: MOUSE_BUTTON_1
+  action: "touch"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_LEFT
+  action: "touch"
+}
 gamepad_trigger {
   input: GAMEPAD_LSTICK_LEFT
   action: "left"

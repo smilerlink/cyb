@@ -1,4 +1,4 @@
-local game = require 'game.main'
+local main = require 'main'
 local nakama = require 'nakama.nakama'
 local realtime = require 'nakama.socket'
 local log = require 'nakama.util.log'
@@ -78,7 +78,7 @@ local function find_opponent_and_join_match(match_callback)
 		log('Sending matchmaker_add message')
 		-- find a match with any other player
 		-- make sure the match contains exactly 2 users (min 2 and max 2)
-		local result = realtime.matchmaker_add(socket, 2, 2, '*')
+		local result = realtime.matchmaker_add(socket, 2, 10, '*')
 		if result.error then
 			log(result.error.message)
 			pprint(result)
@@ -109,7 +109,7 @@ local function handle_match_data(match_data)
 	local data = json.decode(match_data.data)
 	local op_code = tonumber(match_data.op_code)
 	if op_code == OP_CODE_STATE then
-		game.match_update(data.state, data.active_player, data.other_player, data.your_turn)
+		main.match_update(data.state, data.active_player, data.other_player, data.your_turn)
 	else
 		log(('Unknown opcode %d'):format(op_code))
 	end
@@ -119,7 +119,7 @@ end
 -- pass this on to the game
 local function handle_match_presence(match_presence_event)
 	if match_presence_event.leaves and #match_presence_event.leaves > 0 then
-		game.opponent_left()
+		main.opponent_left()
 	end
 end
 
@@ -189,7 +189,7 @@ function M.login(callback)
 		-- We add the logged in player to the matchmaker and join a match
 		-- once one is found. We then call the provided callback to let the
 		-- game know that it can proceed into the game
-		game.on_join_match(function(callback)
+		main.on_join_match(function(callback)
 			log('game.on_join_match')
 			find_opponent_and_join_match(callback)
 		end)
@@ -197,14 +197,14 @@ function M.login(callback)
 		-- Called by the game when the player pressed the Leave button
 		-- when a game is finished (instead of waiting for the next match).
 		-- We send a match leave message to Nakama. Fire and forget.
-		game.on_leave_match(function()
+		main.on_leave_match(function()
 			log('game.on_leave_match')
 			leave_match(match.match_id)
 		end)
 
 		-- Called by the game when the player is trying to make a move.
 		-- We send a match data message to Nakama.
-		game.on_send_player_move(function(row, col)
+		main.on_send_player_move(function(row, col)
 			log('game.on_send_player_move')
 			send_player_move(match.match_id, row, col)
 		end)
@@ -212,6 +212,5 @@ function M.login(callback)
 		callback(true)
 	end)
 end
-
 
 return M

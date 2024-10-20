@@ -1,0 +1,17 @@
+script: "/menu/menu.gui_script"
+nodes {
+  position {
+    x: 501.0
+    y: 318.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "join"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
