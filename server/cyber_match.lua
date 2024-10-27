@@ -5,6 +5,7 @@ local M = {}
 
 local OP_CODE_MOVE = 1
 local OP_CODE_STATE = 2
+local OP_CODE_HIT = 3
 
 local function pprint(t)
     if type(t) ~= 'table' then
@@ -18,24 +19,17 @@ end
 
 local function broadcast_gamestate_to_recipient(dispatcher, gamestate, recipient)
     nk.logger_info('broadcast_gamestate')
-    local active_player = cyber.get_active_player(gamestate)
-    local other_player = cyber.get_other_player(gamestate)
-    local your_turn = active_player.user_id == recipient.user_id
     local message = {
-        state = gamestate,
-        active_player = active_player,
-        other_player = other_player,
-        your_turn = your_turn,
+        state = gamestate
     }
     local encoded_message = nk.json_encode(message)
     dispatcher.broadcast_message(OP_CODE_STATE, encoded_message, { recipient })
 end
 
 local function broadcast_gamestate(dispatcher, gamestate)
-    local player = cyber.get_active_player(gamestate)
-    local opponent = cyber.get_other_player(gamestate)
-    broadcast_gamestate_to_recipient(dispatcher, gamestate, player)
-    broadcast_gamestate_to_recipient(dispatcher, gamestate, opponent)
+    for _, p in ipairs(gamestate.players) do
+        broadcast_gamestate_to_recipient(dispatcher, gamestate, p.id)
+    end
 end
 
 function M.match_init(context, setupstate)
@@ -78,14 +72,13 @@ function M.match_loop(context, dispatcher, tick, gamestate, messages)
 
         if message.op_code == OP_CODE_MOVE then
             local decoded = nk.json_decode(message.data)
-            local row = decoded.row
-            local col = decoded.col
-            gamestate = cyber.player_move(gamestate, row, col)
+            gamestate = cyber.player_move(gamestate, decoded.player, decoded.x, decoded.y)
+        elseif message.op_code == OP_CODE_HIT then
+            local decoded = nk.json_decode(message.data)
+            gamestate = cyber.player_hit(gamestate, decoded.damage)
             if gamestate.winner or gamestate.draw then
                 gamestate.rematch_countdown = 10
             end
-
-            broadcast_gamestate(dispatcher, gamestate)
         end
     end
     if gamestate.rematch_countdown then
@@ -93,9 +86,10 @@ function M.match_loop(context, dispatcher, tick, gamestate, messages)
         if gamestate.rematch_countdown == 0 then
             gamestate = cyber.rematch(gamestate)
         end
-        broadcast_gamestate(dispatcher, gamestate)
     end
-
+    
+    broadcast_gamestate(dispatcher, gamestate)
+    
     return gamestate
 end
 
@@ -106,7 +100,7 @@ end
 function M.match_terminate(context, dispatcher, tick, gamestate, grace_seconds)
     nk.logger_info('match_terminate')
     local message = 'Server shutting down in ' .. grace_seconds .. ' seconds'
-    dispatcher.broadcast_message(2, message)
+    dispatcher.broadcast_message(OP_CODE_STATE, message)
     return nil
 end
 

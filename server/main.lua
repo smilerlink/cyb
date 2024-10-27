@@ -13,7 +13,7 @@ local function makematch(context, matched_users)
     -- print matched users
     for _, user in ipairs(matched_users) do
         local presence = user.presence
-        log('Matched user '%s' named '%s'', presence.user_id, presence.username)
+        log('Matched user \'%s\' named \'%s\'', presence.user_id, presence.username)
     end
 
     local modulename = 'cyber_match'
@@ -28,4 +28,3 @@ nk.run_once(function(ctx)
     log('Backend loaded at %d', now)
     nk.register_matchmaker_matched(makematch)
 end)
-
