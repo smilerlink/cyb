@@ -7,7 +7,6 @@ local json = require 'nakama.util.json'
 
 local M = {}
 
-
 local client = nil
 local socket = nil
 local match = nil
@@ -15,7 +14,7 @@ local match = nil
 -- match data op-codes
 local OP_CODE_MOVE = 1
 local OP_CODE_STATE = 2
-
+local OP_CODE_HIT = 3
 
 -- authentication using device id
 local function device_login(client)
@@ -30,7 +29,6 @@ local function device_login(client)
 	log('Unable to login')
 	return false
 end
-
 
 -- join a match (provided by the matchmaker)
 local function join_match(match_id, token, match_callback)
@@ -48,7 +46,6 @@ local function join_match(match_id, token, match_callback)
 		end
 	end)
 end
-
 
 -- leave a match
 local function leave_match(match_id)
@@ -88,11 +85,11 @@ local function find_opponent_and_join_match(match_callback)
 end
 
 -- send move as match data
-local function send_player_move(match_id, row, col)
+local function send_player_move(match_id, x, y)
 	nakama.sync(function()
 		local data = json.encode({
-			row = row,
-			col = col,
+			x = x,
+			y = y
 		})
 		log('Sending match_data message')
 		local result = realtime.match_data_send(socket, match_id, OP_CODE_MOVE, data)
@@ -204,9 +201,9 @@ function M.login(callback)
 
 		-- Called by the game when the player is trying to make a move.
 		-- We send a match data message to Nakama.
-		main.on_send_player_move(function(row, col)
+		main.on_send_player_move(function(x, y)
 			log('game.on_send_player_move')
-			send_player_move(match.match_id, row, col)
+			send_player_move(match.match_id, x, y)
 		end)
 
 		callback(true)
